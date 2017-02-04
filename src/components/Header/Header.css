@@ -1,5 +1,6 @@
+/* Visual Header */
 header {
-    background: #eeeeee;
+    background: #f9f9f9;
 }
 .intro-text > .intro-text-assistant {
     color: #5D5D5D;
@@ -16,10 +17,10 @@ header {
     margin:105px auto 0 auto;
 }
 .main-search-form  {
-    width: 560px;
+    width: 960px;
 }
 .main-search-form-text {
-    width: 450px;
+    width: 850px;
     height: 81px;
     border-top-left-radius: 14px;
     border-bottom-left-radius: 14px;
@@ -29,7 +30,9 @@ header {
     color: #666666;
     outline: none;
     float: left;
-    font-size: 1.2em;
+    font-size: 25px;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 .main-search-form-btn {
     width: 110px;

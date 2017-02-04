@@ -13,18 +13,28 @@ class SearchContainer extends Component{
       text : "인정",
       meaning : "[명사] 확실히 그렇다고 여김",
       goods : 42,
-      bads : 21
+      bads : 21,
+      display : "none"
     };
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleSearchClick = this.handleSearchClick.bind(this);
     this.handlePointUp = this.handlePointUp.bind(this);
     this.handlePointDown = this.handlePointDown.bind(this);
+    this.handleSearchBoxHidden = this.handleSearchBoxHidden.bind(this);
   }
 
   handleSearchChange(searchText){
+
     this.setState({
-      text : searchText
+      text : searchText,
+      display : "block"
+    });
+  }
+
+  handleSearchBoxHidden(){
+    this.setState({
+      display : "none"
     });
   }
 
@@ -68,7 +78,9 @@ class SearchContainer extends Component{
   }
 
   render(){
-
+    let style = {
+      "display" : this.state.display
+    };
     return (
       <div>
         <Header
@@ -79,7 +91,9 @@ class SearchContainer extends Component{
         <SearchBox
           onClickUp={this.handlePointUp}
           onClickDown={this.handlePointDown}
+          onClickHidden={this.handleSearchBoxHidden}
           textList = {this.state}
+          style = {style}
         />
       </div>
     );

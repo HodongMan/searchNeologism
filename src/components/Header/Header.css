@@ -26,7 +26,9 @@ header {
     border-bottom-left-radius: 14px;
     border:none;
     text-align: center;
-    box-shadow: 0 -2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 6px 0 rgba(0, 0, 0, 0.1), 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 -2px 6px 0 rgba(0, 0, 0, 0.1), 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    -webkit-appearance: none;
     color: #666666;
     outline: none;
     float: left;
@@ -43,6 +45,7 @@ header {
     border-bottom-right-radius: 14px;
     border: none;
     box-shadow: 0 -2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    outline: none;
 }
 .main-search-form-btn > img {
     margin-top: 13px;

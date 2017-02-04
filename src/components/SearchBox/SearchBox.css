@@ -2,6 +2,9 @@
     background: url("../../../public/img/bg_result.png");
     padding: 41px 0 250px 0;
 }
+.search-box-line {
+    display: none;
+}
 .search-box-close {
     text-align: center
 }
@@ -54,4 +57,14 @@
 .search-box-btn p {
     margin-top: 10px;
     font-size: 1.3em;
+}
+.search-box-more-btn {
+    width: 782px;
+    height: 93px;
+    margin: 40px auto 0 auto;
+    background: url("../../../public/img/btn_add.png");
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 2em;
 }

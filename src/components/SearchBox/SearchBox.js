@@ -1,10 +1,12 @@
 import React from "react";
 import "./SearchBox.css";
 
-const SearchBox = ({textList, onClickUp, onClickDown}) => {
+const SearchBox = ({textList, onClickUp, onClickDown, style, onClickHidden}) => {
   return(
-    <section id="search-box">
-        <div className="search-box-close">
+    <section id="search-box" style={style}>
+        <div className="search-box-close" onClick={
+            () => onClickHidden()
+          }>
             <img src="img/close.png"/>
         </div>
         <div className="search-box-dec-wrap">

@@ -6,7 +6,7 @@ export function getSearchResult(search){
 //    search,
 //  });
   axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-  console.log(search);
+  axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
   return axios.get("http://localhost:4000/" + search);
 }
 

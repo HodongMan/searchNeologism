@@ -7,3 +7,7 @@
 .mobile {
     display: none;
 }
+
+.logo > img {
+    width: 80px;
+}

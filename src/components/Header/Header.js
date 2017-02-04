@@ -13,7 +13,7 @@ const Header = ({onClick, onChange}) => (
                       </div>
                       <div className="main-search-form">
                           <div>
-                              <input type="text" placeholder="Ex) ㅇㅈ, 사바사, 세젤예, 커엽다 등" className="main-search-form-text"
+                              <input type="text" placeholder="Ex) ㅇㅈ, 야필패, 세젤예, 듀나 등" className="main-search-form-text"
                                 onChange={
                                   (e) => onChange(e.target.value)
                                 }

@@ -14,6 +14,7 @@ class SearchContainer extends Component{
       meaning : "",
       goods : "",
       bads : "",
+      audioUrl : "",
       display : "none"
     };
 
@@ -45,7 +46,8 @@ class SearchContainer extends Component{
         meaning : response.data.meaning,
         goods : response.data.goods,
         bads : response.data.bads,
-        display : "block"
+        display : "block",
+        audioUrl : response.data.audioUrl
       });
     })
     .catch( response => {
@@ -61,10 +63,9 @@ class SearchContainer extends Component{
       this.setState({
         goods : goods
       });
-      console.log(response.statusText);
     })
     .catch( response => {
-      console.log(response.statusText);
+      console.log(response);
     });
   }
 
@@ -75,10 +76,9 @@ class SearchContainer extends Component{
       this.setState({
         bads : bads
       });
-      console.log(response.statusText);
     })
     .catch( response => {
-      console.log(response.statusText);
+      console.log(response);
     });
   }
 
@@ -97,7 +97,8 @@ class SearchContainer extends Component{
           onClickUp={this.handlePointUp}
           onClickDown={this.handlePointDown}
           onClickHidden={this.handleSearchBoxHidden}
-          textList = {this.state}
+          textList={this.state}
+
           style = {style}
         />
       </div>

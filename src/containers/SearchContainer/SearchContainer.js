@@ -10,10 +10,10 @@ class SearchContainer extends Component{
     this.state = {
       searchText : "",
       searchTextMeaning : "",
-      text : "인정",
-      meaning : "[명사] 확실히 그렇다고 여김",
-      goods : 42,
-      bads : 21,
+      text : "",
+      meaning : "",
+      goods : "",
+      bads : "",
       display : "none"
     };
 
@@ -25,7 +25,6 @@ class SearchContainer extends Component{
   }
 
   handleSearchChange(searchText){
-
     this.setState({
       searchText : searchText,
       display : "block"
@@ -46,6 +45,7 @@ class SearchContainer extends Component{
         meaning : response.data.meaning,
         goods : response.data.goods,
         bads : response.data.bads,
+        display : "block"
       });
     })
     .catch( response => {

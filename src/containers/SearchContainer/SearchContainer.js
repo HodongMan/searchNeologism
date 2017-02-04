@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Header, SearchBox} from "../../components";
+import {Header, SearchBox, SearchList} from "../../components";
 import * as service from "../../services/search";
 
 class SearchContainer extends Component{
@@ -10,12 +10,16 @@ class SearchContainer extends Component{
     this.state = {
       searchText : "",
       searchTextMeaning : "",
-      goodsPoint : 42
+      text : "인정",
+      meaning : "[명사] 확실히 그렇다고 여김",
+      goods : 42,
+      bads : 21
     };
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleSearchClick = this.handleSearchClick.bind(this);
-    this.handlePointUpAndDown = this.handlePointUpAndDown.bind(this);
+    this.handlePointUp = this.handlePointUp.bind(this);
+    this.handlePointDown = this.handlePointDown.bind(this);
   }
 
   handleSearchChange(searchText){
@@ -35,13 +39,28 @@ class SearchContainer extends Component{
 
   }
 
-  handlePointUpAndDown(count){
+  handlePointUp(count){
     service.getSearchResult(this.state.searchText)
     .then( response => {
+      let goods = this.state.goods + count;
       this.setState({
-        goodsPoint : this.state.goodsPoint + 1
+        goods : goods
       });
-      console.log(this.state);
+      console.log(response.statusText);
+    })
+    .catch( response => {
+      console.log(response.statusText);
+    });
+  }
+
+  handlePointDown(count){
+    service.getSearchResult(this.state.searchText)
+    .then( response => {
+      let bads = this.state.bads + count;
+      this.setState({
+        bads : bads
+      });
+      console.log(response.statusText);
     })
     .catch( response => {
       console.log(response.statusText);
@@ -49,10 +68,6 @@ class SearchContainer extends Component{
   }
 
   render(){
-
-    const meaning = "[명사] 확실히 그렇다고 여김";
-    const goods = 42;
-    const bads = 21;
 
     return (
       <div>
@@ -62,11 +77,9 @@ class SearchContainer extends Component{
           onKeyPress={this.handleKeyEnterPress}
         />
         <SearchBox
-          onClick={this.handlePointUpAndDown}
-          text={this.state.searchText}
-          meaning={meaning}
-          goods={this.state.goodsPoint}
-          bads={bads}
+          onClickUp={this.handlePointUp}
+          onClickDown={this.handlePointDown}
+          textList = {this.state}
         />
       </div>
     );

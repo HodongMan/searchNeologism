@@ -5,7 +5,9 @@ export function getSearchResult(search){
 //  return axios.get("http://localhost:8000/", {
 //    search,
 //  });
-  return axios.get("https://httpbin.org/get");
+  axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+  console.log(search);
+  return axios.get("http://localhost:4000/" + search);
 }
 
 export function setPoint(result){

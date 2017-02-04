@@ -27,7 +27,7 @@ class SearchContainer extends Component{
   handleSearchChange(searchText){
 
     this.setState({
-      text : searchText,
+      searchText : searchText,
       display : "block"
     });
   }
@@ -41,10 +41,15 @@ class SearchContainer extends Component{
   handleSearchClick(searchText){
     service.getSearchResult(this.state.searchText)
     .then( response => {
-      console.log(response.statusText);
+      this.setState({
+        text : response.data.text,
+        meaning : response.data.meaning,
+        goods : response.data.goods,
+        bads : response.data.bads,
+      });
     })
     .catch( response => {
-      console.log(response.statusText);
+      console.log(response);
     });
 
   }

@@ -24,7 +24,7 @@ class SearchContainer extends Component{
 
   handleSearchChange(searchText){
     this.setState({
-      searchText
+      text : searchText
     });
   }
 

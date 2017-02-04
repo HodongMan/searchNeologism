@@ -1,0 +1,56 @@
+/* Responsive CSS */
+
+@media (max-width: 768px) {
+    .web {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    
+    /* Header */
+    header .container {
+        padding-top: 175px;
+        padding-bottom: 165px;
+    }
+    #mainNav {
+        display: none;
+    }
+    .main-search-form {
+        width: 90%;
+        position: relative;
+        margin-top: 158px;
+    }
+    .main-search-form-text {
+        width: 100%;
+        border-radius: 14px;
+        text-align: left;
+        font-size: 25px;
+        height: 93px;
+        padding: 0 30px;
+    }
+    .main-search-form-btn {
+        position: absolute;
+        right: 0;
+        height: 93px;
+        width: 125px;
+    }
+    .intro-text-assistant {
+        font-size: 28px !important;    
+    }
+    .intro-text {
+        padding: 0 80px;
+    }
+    .intro-text > img {
+        width: 100%;
+    }
+    
+    /* Search List */
+    .search-list-in {
+        width: 100%;
+        margin: 90px 0 0 0;
+    }
+    .search-item {
+        width: 100%;
+    }
+}

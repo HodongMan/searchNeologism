@@ -2,9 +2,10 @@ import axios from "axios";
 
 
 export function getSearchResult(search){
-  return axios.post("/url", {
-    search,
-  });
+//  return axios.get("http://localhost:8000/", {
+//    search,
+//  });
+  return axios.get("https://httpbin.org/get");
 }
 
 export function setPoint(result){

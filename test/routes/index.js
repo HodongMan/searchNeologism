@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var config = require("./config");
+const config = require("./config");
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -15,7 +15,6 @@ router.get('/', function(req, res) {
 
 router.get('/:id', function(req, res) {
   let searchData = req.params.id;
-  console.log(searchData);
   let data = {
   	"text" : "No Suck Data",
   	"meaning" : "",
@@ -24,7 +23,6 @@ router.get('/:id', function(req, res) {
   };
 
   config.forEach(function(element, index){
-  	console.log(element.searchData);
   	if(element.searchData === searchData){
   		data = element;
   	}
